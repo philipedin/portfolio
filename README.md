@@ -1,26 +1,50 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# Portfolio - Philip Edin
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+## What is this?
 
-## Install
+This is a portfolio which showcases the work that Philip has done and the experiences he has.
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+The project is based on the default Gatsby starter.
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
+## Prerequisites
 
-Then you can run it by:
-```sh
-cd gatsby-example-site
-gatsby develop
-```
+### Git
 
-## Deploy
+https://git-scm.com/downloads
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+### Node
+
+https://nodejs.org/en/
+
+### Yarn (optional)
+
+If Node and NPM is installed. Run `npm i -g yarn` to install it.
+
+If you don't want to install Yarn you can just use NPM to run the commands in this repo.
+
+## Installing
+
+Clone the repo: `git clone https://github.com/philipedin/portfolio.git`.
+
+In your chosen command line, stand in the project directory and install the dependencies with: `yarn install`.
+
+## Running
+Run `yarn start` (or press `F5` if you are on VSCode) to hot-serve your website on <http://localhost:8000>.
+
+Run `yarn run build` to create static site ready to host (`/public`)
+
+## What technolologies are used?
+
+### React
+Used to build the views.
+### Gatsby
+Used to generate a static website.
+### Styled Components
+A way to style components in React.
+### Typescript
+For static typing, a better code experience and easier spotting of errors.
+### Markdown
+Used as data source
+
+## Authors
+Philip Edin
