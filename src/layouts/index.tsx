@@ -1,11 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import * as React from 'react'
+import * as PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
 import Header from '../components/header'
 import './index.css'
 
-const Layout = ({ children, data }) => (
+interface Props {
+  children: () => JSX.Element[];
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+      },
+    },
+  }
+}
+
+const Layout = ({ children, data }: Props) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -27,10 +38,6 @@ const Layout = ({ children, data }) => (
     </div>
   </div>
 )
-
-Layout.propTypes = {
-  children: PropTypes.func,
-}
 
 export default Layout
 

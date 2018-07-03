@@ -1,7 +1,12 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import * as React from 'react';
+import Link from 'gatsby-link';
 
-const Header = ({ siteTitle }) => (
+interface Props {
+  siteTitle: string;
+}
+
+const Header   
+= ({ siteTitle }: Props) => (
   <div
     style={{
       background: 'rebeccapurple',
