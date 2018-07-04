@@ -1,9 +1,9 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Header from '../components/header'
+import styled from 'styled-components';
 import './index.css'
+import Header from '../components/header';
 
 interface Props {
   children: () => JSX.Element[];
@@ -16,8 +16,25 @@ interface Props {
   }
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  background: rgb(85, 71, 130);
+`;
+
+const LeftPane = styled.div`
+  min-width: 180px;
+  padding: 25px 15px;
+  background: rgba(0, 0, 0, 0.5);
+`;
+
+const Main = styled.div`
+  flex: 1;
+  padding: 25px 15px;
+  background: rgba(0, 0, 0, 0.6);
+`;
+
 const Layout = ({ children, data }: Props) => (
-  <div>
+  <Wrapper>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -25,18 +42,15 @@ const Layout = ({ children, data }: Props) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
+    <LeftPane>
+      Testing
+    </LeftPane>
+    <Main>
+      <div>
+        {children()}
+      </div>
+    </Main>
+  </Wrapper>
 )
 
 export default Layout
