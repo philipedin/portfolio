@@ -1,9 +1,9 @@
 import * as React from 'react'
 import Helmet from 'react-helmet';
-
 import styled from 'styled-components';
+
 import './index.css'
-import Header from '../components/header';
+import Menu from '../components/Menu';
 
 interface Props {
   children: () => JSX.Element[];
@@ -43,7 +43,7 @@ const Layout = ({ children, data }: Props) => (
       ]}
     />
     <LeftPane>
-      Testing
+      <Menu />
     </LeftPane>
     <Main>
       <div>
