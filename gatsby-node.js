@@ -25,8 +25,52 @@ exports.modifyWebpackConfig = ({config, stage}) => {
   }
 };
 
-// Create slugs for files.
-// Slug will used for blog page path.
-exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
+exports.createPages = ({ boundActionCreators, graphql }) => {
+  const { createPage } = boundActionCreators;
 
-};
+  const workTemplate = path.resolve('src/templates/work.tsx');
+
+  return graphql(`
+  {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___title] }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            path
+            title
+            technologies
+
+          }
+        }
+      }
+    }
+  }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    result.data.allMarkdownRemark.edges.forEach(({
+      node: {
+        frontmatter: {
+          path,
+          title,
+          technologies,
+
+        }
+      }
+    }) => {
+      createPage({
+        path,
+        component: workTemplate,
+        context: {
+          title,
+          technologies,
+
+        },
+      })
+    })
+  });
+}
