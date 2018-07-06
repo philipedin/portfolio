@@ -1,11 +1,11 @@
-import { Image } from '.';
+import { IImage } from '.';
 
-export default interface IWork {
+export default interface IIWork {
   path: string;
   title: string;
   technologies: [string];
   images: {
-    logo: Image;
-    screenshots: [Image]
+    logo: IImage;
+    screenshots: [IImage]
   };
 }

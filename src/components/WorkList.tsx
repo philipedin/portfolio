@@ -2,11 +2,11 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
-import { Work, Edge } from '../models';
+import { IWork, IEdge } from '../models';
 import WorkListItem from './WorkListItem';
 
 interface IProps {
-  work: [Edge<Work>];
+  work: [IEdge<IWork>];
 }
 
 const Wrapper = styled.div`

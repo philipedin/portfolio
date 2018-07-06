@@ -1,9 +1,9 @@
-import Edge from './edge';
-import Work from './work';
-import Image from './image';
+import IEdge from './edge';
+import IWork from './work';
+import IImage from './image';
 
 export {
-  Edge,
-  Work,
-  Image,
+  IEdge,
+  IWork,
+  IImage,
 };

@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { Work } from '../models';
+import { IWork } from '../models';
 import Carousel from 'nuka-carousel';
 
 interface IProps {
   pathContext: {
     html: string | undefined;
-    workData: Work
+    workData: IWork
   };
 }
 

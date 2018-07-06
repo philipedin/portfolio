@@ -1,10 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Work, Edge } from '../models';
+import { IWork, IEdge } from '../models';
 
 interface IProps {
-  work: Edge<Work>;
+  work: IEdge<IWork>;
 }
 
 const Wrapper = styled.div`

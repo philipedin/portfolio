@@ -1,10 +1,10 @@
 import * as React from 'react';
 import WorkList from '../components/WorkList';
-import { Edge, Work } from '../models';
+import { IEdge, IWork } from '../models';
 interface IProps {
   data: {
     allMarkdownRemark: {
-      edges: [Edge<Work>];
+      edges: [IEdge<IWork>];
     },
   };
 }
