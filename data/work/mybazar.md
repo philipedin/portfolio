@@ -1,7 +1,6 @@
 ---
 path: "/work/high-coast-distillery"
 title: "Cask Owner Web"
-description: ""
 technologies:
   - Typescript      
   - C#
