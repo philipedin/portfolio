@@ -5,5 +5,5 @@ import Image from './image';
 export {
   Edge,
   Work,
-  Image
+  Image,
 };

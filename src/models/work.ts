@@ -1,6 +1,6 @@
 import { Image } from '.';
 
-export default interface Work {
+export default interface IWork {
   path: string;
   title: string;
   technologies: [string];
@@ -8,4 +8,4 @@ export default interface Work {
     logo: Image;
     screenshots: [Image]
   };
-};
+}
