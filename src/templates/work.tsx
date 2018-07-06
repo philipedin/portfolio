@@ -37,7 +37,13 @@ const WorkTemplate = ({
     {technologies &&
       <div>
         <h2>Technologies</h2>
-        {technologies.map((skill) => <div key={skill}>{skill}</div>)}
+        <ul>
+          {technologies.map((skill) =>
+            <li>
+              <div key={skill}>{skill}</div>
+            </li>,
+          )}
+        </ul>
       </div>
     }
   </div>
