@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Work } from '../models';
 import Carousel from 'nuka-carousel';
 
-interface Props {
+interface IProps {
   pathContext: {
     html: string | undefined;
     workData: Work
@@ -18,17 +18,17 @@ const WorkTemplate = ({
       title,
       technologies,
       images: {
-        screenshots
-      }
-    }
-  }
-}: Props) => (
+        screenshots,
+      },
+    },
+  },
+}: IProps) => (
   <div>
     <h1>{title}</h1>
     <Carousel autoplay>
       {screenshots &&
-        screenshots.map(screenshot => 
-          <div><img key={screenshot.publicURL} src={screenshot.publicURL} /></div>
+        screenshots.map((screenshot) =>
+          <div><img key={screenshot.publicURL} src={screenshot.publicURL} /></div>,
       )}
     </Carousel>
     {html &&
@@ -37,7 +37,7 @@ const WorkTemplate = ({
     {technologies &&
       <div>
         <h2>Technologies</h2>
-        {technologies.map(skill => <div key={skill}>{skill}</div>)}
+        {technologies.map((skill) => <div key={skill}>{skill}</div>)}
       </div>
     }
   </div>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Work, Edge } from '../models';
 
-interface Props {
+interface IProps {
   work: Edge<Work>;
 }
 
@@ -29,23 +29,23 @@ interface ImageContainerProps {
 const ImageContainer = styled.div<ImageContainerProps>`
   width: 300px;
   height: 200px;
-  background-image: url("${props => props.imageUrl}");
-  background-position: center; 
+  background-image: url("${(props) => props.imageUrl}");
+  background-position: center;
   background-size: contain;
   background-color: #fff;
   background-repeat: no-repeat;
 `;
 
-const WorkListItem = ({ work }: Props) => {
+const WorkListItem = ({ work }: IProps) => {
   const {
     node: {
       frontmatter: {
         title,
         images: {
-          logo
-        }
-      }
-    }
+          logo,
+        },
+      },
+    },
   } = work;
   return (
     <Wrapper>

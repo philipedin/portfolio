@@ -1,11 +1,11 @@
-import * as React from 'react'
+import * as React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
-import './index.css'
+import './index.css';
 import Menu from '../components/Menu';
 
-interface Props {
+interface IProps {
   children: () => JSX.Element[];
   data: {
     site: {
@@ -13,7 +13,7 @@ interface Props {
         title: string;
       },
     },
-  }
+  };
 }
 
 const Wrapper = styled.div`
@@ -31,7 +31,7 @@ const Right = styled.div`
   max-width: 900px;
 `;
 
-const Layout = ({ children, data }: Props) => (
+const Layout = ({ children, data }: IProps) => (
   <Wrapper>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -49,9 +49,9 @@ const Layout = ({ children, data }: Props) => (
       </div>
     </Right>
   </Wrapper>
-)
+);
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
   query SiteTitleQuery {
@@ -61,4 +61,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

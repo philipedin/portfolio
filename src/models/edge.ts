@@ -1,7 +1,7 @@
-export default interface Edge<T> {
+export default interface IEdge<T> {
   node: {
     id: string;
     html: string;
     frontmatter: T;
-  }
+  };
 }

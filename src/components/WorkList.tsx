@@ -5,7 +5,7 @@ import Link from 'gatsby-link';
 import { Work, Edge } from '../models';
 import WorkListItem from './WorkListItem';
 
-interface Props {
+interface IProps {
   work: [Edge<Work>];
 }
 
@@ -14,16 +14,16 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const WorkList = ({ work }: Props) => (
+const WorkList = ({ work }: IProps) => (
   <Wrapper>
     {work &&
-      work.map(workItem =>
+      work.map((workItem) =>
         <Link to={workItem.node.frontmatter.path}>
           <WorkListItem work={workItem} key={workItem.node.id} />
-        </Link>
+        </Link>,
       )
     }
   </Wrapper>
-)
+);
 
 export default WorkList;
