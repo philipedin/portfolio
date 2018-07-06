@@ -18,19 +18,17 @@ interface Props {
 
 const Wrapper = styled.div`
   display: flex;
-  background: rgb(85, 71, 130);
 `;
 
 const LeftPane = styled.div`
   min-width: 180px;
   padding: 25px 15px;
-  background: rgba(0, 0, 0, 0.5);
 `;
 
-const Main = styled.div`
+const Right = styled.div`
   flex: 1;
   padding: 25px 15px;
-  background: rgba(0, 0, 0, 0.6);
+  max-width: 900px;
 `;
 
 const Layout = ({ children, data }: Props) => (
@@ -45,11 +43,11 @@ const Layout = ({ children, data }: Props) => (
     <LeftPane>
       <Menu />
     </LeftPane>
-    <Main>
+    <Right>
       <div>
         {children()}
       </div>
-    </Main>
+    </Right>
   </Wrapper>
 )
 

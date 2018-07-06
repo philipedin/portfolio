@@ -37,11 +37,18 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     ) {
       edges {
         node {
+          html
           frontmatter {
             path
             title
             technologies
-
+            images {
+              screenshots {
+                absolutePath
+                relativePath
+                publicURL
+              }
+            }
           }
         }
       }
@@ -52,13 +59,18 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(result.errors);
     }
 
+
+
     result.data.allMarkdownRemark.edges.forEach(({
       node: {
+        html,
         frontmatter: {
           path,
           title,
           technologies,
-
+          images: {
+            screenshots
+          }
         }
       }
     }) => {
@@ -66,9 +78,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         path,
         component: workTemplate,
         context: {
-          title,
-          technologies,
-
+          html,
+          workData: {
+            title,
+            technologies,
+            images: {
+              screenshots
+            }
+          }
         },
       })
     })

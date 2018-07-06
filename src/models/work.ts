@@ -6,5 +6,6 @@ export default interface Work {
   technologies: [string];
   images: {
     logo: Image;
+    screenshots: [Image]
   };
 };

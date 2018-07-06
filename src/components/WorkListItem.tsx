@@ -40,7 +40,6 @@ const WorkListItem = ({ work }: Props) => {
   const {
     node: {
       frontmatter: {
-        path,
         title,
         images: {
           logo
@@ -50,9 +49,7 @@ const WorkListItem = ({ work }: Props) => {
   } = work;
   return (
     <Wrapper>
-      {/* <img src={logo.publicURL} /> */}
       <ImageContainer imageUrl={logo.publicURL}  />
-      <h3>{title}</h3>
     </Wrapper>
   );
 

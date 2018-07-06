@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -12,6 +13,11 @@ module.exports = {
         name: 'data'
       }
     },
-    'gatsby-transformer-remark'
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.ts`,
+      },
+    },
   ],
 }
