@@ -1,6 +1,12 @@
 ---
 path: "/work/harlitt"
 title: "Härlitt"
+technologies:
+  - Javascript      
+  - PostgreSQL
+  - Swift
+  - Vuforia
+  - SceneKit
 images:
   logo: "../images/harlitt_logo.jpg"
   screenshots:
