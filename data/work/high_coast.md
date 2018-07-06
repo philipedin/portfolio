@@ -15,6 +15,6 @@ images:
     -  "../images/high_coast_screen_3.png"
 ---
 
-The Cask Owner Web was for High Coast Whiskey to let cask owners have more control over their casks.
+The Cask Owner Web gives cask owners at High Coast Whiskey the ability to manage their casks more easily.
 
-The system was created as an React app on the frontend and with a .Net Core backend. We used Typescriupt in the client app to make sure of less bugs and to make it a more friendly coding experience. We decided to try Styled Components as the approach to style components.
+The system consists of a .Net Core-backend coupled with a React-frontend-client. I worked on this project from the planning phase and together with the team developed it from the ground up.
