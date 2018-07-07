@@ -5,6 +5,10 @@ technologies:
   - Javascript      
   - MongoDB
   - Swift
+  - HTML
+  - CSS
+  - AngularJS
+  - Node
 images:
   logo: "../images/mitt_kak_logo.png"
   screenshots:

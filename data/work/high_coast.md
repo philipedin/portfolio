@@ -7,6 +7,8 @@ technologies:
   - React
   - Styled Components
   - .Net
+  - HTML
+  - CSS
 images:
   logo: "../images/high_coast_logo.jpg"
   screenshots:

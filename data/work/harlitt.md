@@ -7,6 +7,8 @@ technologies:
   - Swift
   - Vuforia
   - SceneKit
+  - AngularJS
+  - Node
 images:
   logo: "../images/harlitt_logo.jpg"
   screenshots:

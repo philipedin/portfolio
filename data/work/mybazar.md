@@ -8,6 +8,9 @@ technologies:
   - Javascript
   - Express
   - Node
+  - HTML
+  - CSS
+  - MySQL
 images:
   logo: "../images/mybazar_logo.png"
   screenshots:
