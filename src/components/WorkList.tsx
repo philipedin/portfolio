@@ -18,8 +18,8 @@ const WorkList = ({ work }: IProps) => (
   <Wrapper>
     {work &&
       work.map((workItem) =>
-        <Link to={workItem.node.frontmatter.path}>
-          <WorkListItem work={workItem} key={workItem.node.id} />
+        <Link to={workItem.node.frontmatter.path} key={workItem.node.id}>
+          <WorkListItem work={workItem} />
         </Link>,
       )
     }
