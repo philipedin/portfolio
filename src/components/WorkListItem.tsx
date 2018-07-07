@@ -12,8 +12,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 
   max-width: 300px;
-  margin-right: 15px;
-  margin-bottom: 15px;
+  margin: 10px;
 
   transition: transform 100ms;
 

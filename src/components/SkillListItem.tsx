@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
   height: 90px;
   width: 300px;
-  margin: 15px;
+  margin: 10px;
   padding: 10px;
 
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
