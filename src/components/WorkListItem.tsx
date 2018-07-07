@@ -26,14 +26,25 @@ interface ImageContainerProps {
   imageUrl: string;
 }
 
-const ImageContainer = styled.div<ImageContainerProps>`
-  width: 300px;
+const ImageContainer = styled.div`
+  width: 200px;
   height: 200px;
-  background-image: url("${(props) => props.imageUrl}");
-  background-position: center;
-  background-size: contain;
-  background-color: #fff;
-  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+`;
+
+const Image = styled.img`
+  max-height: 100%;
+  margin: 0px;
 `;
 
 const WorkListItem = ({ work }: IProps) => {
@@ -48,7 +59,9 @@ const WorkListItem = ({ work }: IProps) => {
   } = work;
   return (
     <Wrapper>
-      <ImageContainer imageUrl={logo.publicURL}  />
+      <ImageContainer>
+        <Image src={logo.publicURL} />
+      </ImageContainer>
     </Wrapper>
   );
 
