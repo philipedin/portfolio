@@ -22,6 +22,16 @@ const Menu = () => (
           textDecoration: 'none',
         }}
       >
+        Home
+      </Link>
+    </MenuItem>
+    <MenuItem>
+      <Link
+        to="/work"
+        style={{
+          textDecoration: 'none',
+        }}
+      >
         Work
       </Link>
     </MenuItem>
