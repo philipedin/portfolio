@@ -6,7 +6,8 @@ technologies:
   - C#
   - React
   - Styled Components
-  - .Net
+  - MobX
+  - .Net Core
   - HTML
   - CSS
 images:

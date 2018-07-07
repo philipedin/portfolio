@@ -6,6 +6,7 @@ technologies:
   - React
   - React Native
   - Javascript
+  - Redux
   - Express
   - Node
   - HTML
