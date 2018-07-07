@@ -42,6 +42,7 @@ query SkillsQuery {
               relativePath
               publicURL
             }
+            link
           }
         }
       }

@@ -46,16 +46,19 @@ const SkillListItem = ({ skill }: IProps) => {
   const {
     name,
     image,
+    link,
   } = skill;
   return (
-    <Wrapper>
-      <Left>
-        <Image src={image.publicURL} />
-      </Left>
-      <Right>
-        <Name>{name}</Name>
-      </Right>
-    </Wrapper>
+    <a target="_blank" href={link}>
+      <Wrapper>
+        <Left>
+          <Image src={image.publicURL} />
+        </Left>
+        <Right>
+          <Name>{name}</Name>
+        </Right>
+      </Wrapper>
+    </a>
   );
 };
 
