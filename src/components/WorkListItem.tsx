@@ -40,7 +40,6 @@ const WorkListItem = ({ work }: IProps) => {
   const {
     node: {
       frontmatter: {
-        title,
         images: {
           logo,
         },
