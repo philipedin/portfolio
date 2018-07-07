@@ -3,18 +3,25 @@ import Link from 'gatsby-link';
 
 import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  display: flex;
+`;
+
 const MenuItem = styled.div`
+  margin: 0px 10px;
   transition: padding-left 100ms;
   position: relative;
 
+  transition: transform 100ms;
+
   &:hover {
     cursor: pointer;
-    padding-left: 15px;
+    transform: scale(1.15);
   }
 `;
 
 const Menu = () => (
-  <div>
+  <Wrapper>
     <MenuItem>
       <Link
         to="/"
@@ -45,7 +52,7 @@ const Menu = () => (
         Skills
       </Link>
     </MenuItem>
-  </div>
+  </Wrapper>
 );
 
 export default Menu;

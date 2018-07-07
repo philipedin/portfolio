@@ -17,18 +17,21 @@ interface IProps {
 }
 
 const Wrapper = styled.div`
+  max-width: 1366px;
+  margin: 0 auto;
+
   display: flex;
+  flex-direction: column;
 `;
 
-const LeftPane = styled.div`
+const Header = styled.div`
   min-width: 180px;
-  padding: 25px 15px;
+  padding: 15px;
 `;
 
 const Right = styled.div`
   flex: 1;
-  padding: 25px 15px;
-  max-width: 900px;
+  padding: 0px 15px;
 `;
 
 const Layout = ({ children, data }: IProps) => (
@@ -40,9 +43,9 @@ const Layout = ({ children, data }: IProps) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <LeftPane>
+    <Header>
       <Menu />
-    </LeftPane>
+    </Header>
     <Right>
       <div>
         {children()}
