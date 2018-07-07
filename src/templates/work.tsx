@@ -11,7 +11,6 @@ interface IProps {
 }
 
 const WorkTemplate = ({
-  pathContext,
   pathContext: {
     html,
     workData: {
@@ -28,7 +27,7 @@ const WorkTemplate = ({
     <Carousel autoplay>
       {screenshots &&
         screenshots.map((screenshot) =>
-          <div><img key={screenshot.publicURL} src={screenshot.publicURL} /></div>,
+          <img key={screenshot.publicURL} src={screenshot.publicURL} />,
       )}
     </Carousel>
     {html &&
@@ -39,8 +38,8 @@ const WorkTemplate = ({
         <h2>Technologies</h2>
         <ul>
           {technologies.map((skill) =>
-            <li>
-              <div key={skill}>{skill}</div>
+            <li key={skill}>
+              <div>{skill}</div>
             </li>,
           )}
         </ul>
