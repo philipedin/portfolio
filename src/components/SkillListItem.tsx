@@ -11,13 +11,12 @@ const Wrapper = styled.div`
   display: flex;
 
   height: 90px;
-  max-width: 300px;
+  width: 300px;
   margin: 15px;
 
   transition: transform 100ms;
 
   &:hover {
-    cursor: pointer;
     transform: scale(1.15);
   }
 `;

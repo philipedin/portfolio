@@ -11,14 +11,14 @@ interface IProps {
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const SkillList = ({ skills }: IProps) => (
   <Wrapper>
     {skills &&
       skills.map((skill) =>
-        <SkillListItem skill={skill} />,
+        <SkillListItem key={skill.name} skill={skill} />,
       )
     }
   </Wrapper>
