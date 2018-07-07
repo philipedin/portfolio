@@ -27,7 +27,9 @@ const WorkPage = ({
 export const pageQuery = graphql`
 
 query WorkQuery {
-  allMarkdownRemark {
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/data/work/.*\\.md$/"}}
+  ) {
     edges {
       node {
         id

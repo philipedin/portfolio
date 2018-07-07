@@ -34,6 +34,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___title] }
+      filter: {fileAbsolutePath: {regex: "/data/work/.*\.md$/"}}
     ) {
       edges {
         node {
@@ -89,5 +90,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         },
       })
     })
+
+    result.data.allMarkdownRemark.edges.forEach(({
+      node
+    }) => {
+
+      console.log(node);
+    })
+
   });
 }
