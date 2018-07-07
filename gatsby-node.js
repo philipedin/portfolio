@@ -91,12 +91,5 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       })
     })
 
-    result.data.allMarkdownRemark.edges.forEach(({
-      node
-    }) => {
-
-      console.log(node);
-    })
-
   });
 }
