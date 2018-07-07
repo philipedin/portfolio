@@ -16,3 +16,5 @@ images:
 ---
 
 MyBazar is the leading digital platform for local merchants and small entrepreneurs in Malaysia, blending a unique mix of capacity development, social shopping and e-commerce.
+
+My contributions to the project included work on the website build with React, the mobile app made with React Native and the Node-based backend.

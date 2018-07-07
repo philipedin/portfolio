@@ -16,4 +16,4 @@ images:
 
 Härlitt is an app for iOS and Android that let's you explore parts of literature all around you with a geolocation-based experience.
 
-I've worked on the later releases for the iOS-version of the app, both on the client and backend. The latest release included AR-capabilities powered by [Vuforia](https://www.vuforia.com/)
+I've worked on the later releases for the iOS-version of the app, that included work on the mobile client the web admin-client and the backend. The latest release included AR-capabilities powered by [Vuforia](https://www.vuforia.com/)
