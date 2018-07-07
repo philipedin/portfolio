@@ -35,6 +35,16 @@ const Menu = () => (
         Work
       </Link>
     </MenuItem>
+    <MenuItem>
+      <Link
+        to="/skills"
+        style={{
+          textDecoration: 'none',
+        }}
+      >
+        Skills
+      </Link>
+    </MenuItem>
   </div>
 );
 
