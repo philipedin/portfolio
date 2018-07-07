@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 
   max-width: 300px;
   margin-right: 15px;
+  margin-bottom: 15px;
 
   transition: transform 100ms;
 
