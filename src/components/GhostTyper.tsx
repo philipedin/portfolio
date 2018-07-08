@@ -25,6 +25,10 @@ class GhostTyper extends React.Component<IProps, IState> {
     this.timer = setTimeout(this.addNextCharacter, this.state.interval);
   }
 
+  componentWillUnmount() {
+    this.endTimer();
+  }
+
   get randomInterval() {
     return Math.floor(Math.random() * (20 + 100 + 1));
   }
