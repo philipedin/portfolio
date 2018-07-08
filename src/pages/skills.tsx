@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SkillList from '../components/SkillList';
 import { IEdge, ISkill } from '../models';
+import GhostTyper from '../components/GhostTyper';
 
 interface IProps {
   data: {
@@ -19,7 +20,7 @@ const SkillsPage = ({
 }: IProps) => (
   <div>
     <h1>Skills</h1>
-    <div dangerouslySetInnerHTML={{ __html: edges[0].node.html }} />
+    <GhostTyper text="This list includes technologies that i have experience working with" />
     <SkillList skills={edges[0].node.frontmatter.skills} />
   </div>
 );
@@ -33,7 +34,6 @@ query SkillsQuery {
     edges {
       node {
         id
-        html
         frontmatter {
           skills {
             name

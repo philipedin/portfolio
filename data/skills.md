@@ -85,5 +85,3 @@ skills:
     image: "./images/styled_components_logo.png"
     link: "https://www.styled-components.com/"
 ---
-
-This list includes technologies, work methodologies that i have experience working with
