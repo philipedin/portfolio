@@ -30,7 +30,7 @@ const routes = {
     path: '/work',
   },
   skills: {
-    name: 'Home',
+    name: 'Skills',
     path: '/skills',
   },
 };
