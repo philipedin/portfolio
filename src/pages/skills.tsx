@@ -20,7 +20,7 @@ const SkillsPage = ({
 }: IProps) => (
   <div>
     <h1>Skills</h1>
-    <GhostTyper text="This list includes technologies that i have experience working with" />
+    <GhostTyper text="This list includes technologies that i have experience working with." />
     <SkillList skills={edges[0].node.frontmatter.skills} />
   </div>
 );
