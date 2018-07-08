@@ -45,7 +45,6 @@ const Name = styled.span<INameProps>`
 
 const Menu = () => (
   <Wrapper>
-    {console.log(location)}
     <MenuItem>
       <Link
         to={routes.home.path}
