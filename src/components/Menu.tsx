@@ -12,44 +12,74 @@ const MenuItem = styled.div`
   transition: padding-left 100ms;
   position: relative;
 
-  transition: transform 100ms;
+  transition: all 100ms;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.15);
+    font-weight: bold;
   }
+`;
+
+const routes = {
+  home: {
+    name: 'Home',
+    path: '/',
+  },
+  work: {
+    name: 'Work',
+    path: '/work',
+  },
+  skills: {
+    name: 'Home',
+    path: '/skills',
+  },
+};
+
+interface INameProps {
+  isCurrentRoute: boolean;
+}
+
+const Name = styled.span<INameProps>`
+  font-weight: ${(props: INameProps) => props.isCurrentRoute ? 'bold' : 'none' };
 `;
 
 const Menu = () => (
   <Wrapper>
+    {console.log(location)}
     <MenuItem>
       <Link
-        to="/"
+        to={routes.home.path}
         style={{
           textDecoration: 'none',
         }}
       >
-        Home
+        <Name isCurrentRoute={location.pathname === routes.home.path}>
+          {routes.home.name}
+        </Name>
       </Link>
     </MenuItem>
     <MenuItem>
       <Link
-        to="/work"
+        to={routes.work.path}
         style={{
           textDecoration: 'none',
         }}
       >
-        Work
+        <Name isCurrentRoute={location.pathname === routes.work.path}>
+          {routes.work.name}
+        </Name>
       </Link>
     </MenuItem>
     <MenuItem>
       <Link
-        to="/skills"
+        to={routes.skills.path}
         style={{
           textDecoration: 'none',
         }}
       >
-        Skills
+        <Name isCurrentRoute={location.pathname === routes.skills.path}>
+          {routes.skills.name}
+        </Name>
       </Link>
     </MenuItem>
   </Wrapper>
