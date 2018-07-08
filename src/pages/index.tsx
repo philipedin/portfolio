@@ -1,9 +1,10 @@
 import * as React from 'react';
+import GhostTyper from '../components/GhostTyper';
 
 const IndexPage = () => (
   <div>
     <h1>Philip Edin</h1>
-    <p>I'm a Web Developer with passion for front-end.</p>
+    <GhostTyper text="I'm a Web Developer with passion for front-end." />
   </div>
 );
 
