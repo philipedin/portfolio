@@ -51,6 +51,10 @@ class Carousel extends React.Component<IProps, IState> {
     this.timer = setInterval(this.nextImage, this.interval);
   }
 
+  componentWillUnmount() {
+    this.endTimer();
+  }
+
   get currentImage() {
     const { currentImageIndex } = this.state;
     const { imagesSources } = this.props;
