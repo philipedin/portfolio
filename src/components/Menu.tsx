@@ -43,45 +43,50 @@ const Name = styled.span<INameProps>`
   font-weight: ${(props: INameProps) => props.isCurrentRoute ? 'bold' : 'none' };
 `;
 
-const Menu = () => (
-  <Wrapper>
-    <MenuItem>
-      <Link
-        to={routes.home.path}
-        style={{
-          textDecoration: 'none',
-        }}
-      >
-        <Name isCurrentRoute={location.pathname === routes.home.path}>
-          {routes.home.name}
-        </Name>
-      </Link>
-    </MenuItem>
-    <MenuItem>
-      <Link
-        to={routes.work.path}
-        style={{
-          textDecoration: 'none',
-        }}
-      >
-        <Name isCurrentRoute={location.pathname === routes.work.path}>
-          {routes.work.name}
-        </Name>
-      </Link>
-    </MenuItem>
-    <MenuItem>
-      <Link
-        to={routes.skills.path}
-        style={{
-          textDecoration: 'none',
-        }}
-      >
-        <Name isCurrentRoute={location.pathname === routes.skills.path}>
-          {routes.skills.name}
-        </Name>
-      </Link>
-    </MenuItem>
-  </Wrapper>
-);
+const Menu = () => {
+  const currentPathName =
+    typeof window !== 'undefined' ? window.location.pathname : '';
+
+  return (
+    <Wrapper>
+      <MenuItem>
+        <Link
+          to={routes.home.path}
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          <Name isCurrentRoute={currentPathName === routes.home.path}>
+            {routes.home.name}
+          </Name>
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <Link
+          to={routes.work.path}
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          <Name isCurrentRoute={currentPathName === routes.work.path}>
+            {routes.work.name}
+          </Name>
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <Link
+          to={routes.skills.path}
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          <Name isCurrentRoute={currentPathName === routes.skills.path}>
+            {routes.skills.name}
+          </Name>
+        </Link>
+      </MenuItem>
+    </Wrapper>
+  );
+};
 
 export default Menu;
