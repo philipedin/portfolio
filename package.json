@@ -24,7 +24,6 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.3",
