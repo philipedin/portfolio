@@ -38,10 +38,6 @@ const Layout = ({ children, data }: IProps) => (
   <Wrapper>
     <Helmet
       title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
     />
     <Header>
       <Menu />

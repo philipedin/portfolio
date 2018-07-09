@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/portfolio',
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Portfolio - Philip Edin',
   },
   plugins: [
     'gatsby-plugin-styled-components',
