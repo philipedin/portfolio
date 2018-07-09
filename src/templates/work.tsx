@@ -1,7 +1,20 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
 import { IWork } from '../models';
-import Carousel from 'nuka-carousel';
+import Carousel from '../components/Carousel';
+
+const ImageContainer = styled.div`
+  height: 400px;
+`;
+
+const Image = styled.img`
+  max-height: 100%;
+`;
+
+const Description = styled.div`
+  margin-top: 15px;
+`;
 
 interface IProps {
   pathContext: {
@@ -24,14 +37,15 @@ const WorkTemplate = ({
 }: IProps) => (
   <div>
     <h1>{title}</h1>
-    <Carousel autoplay>
-      {screenshots &&
-        screenshots.map((screenshot) =>
-          <img key={screenshot.publicURL} src={screenshot.publicURL} />,
-      )}
-    </Carousel>
+
+    {screenshots &&
+      <Carousel
+        imagesSources={screenshots.map((screenshot) => screenshot.publicURL)}
+      />
+    }
+
     {html &&
-      <div dangerouslySetInnerHTML={{__html: html}} />
+      <Description dangerouslySetInnerHTML={{__html: html}} />
     }
     {technologies &&
       <div>
@@ -47,4 +61,5 @@ const WorkTemplate = ({
     }
   </div>
 );
+
 export default WorkTemplate;
