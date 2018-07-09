@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Philip Edin <philip.edin@gmail.com>",
   "dependencies": {
-    "@types/nuka-carousel": "^4.2.2",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
@@ -12,7 +11,6 @@
     "gatsby-plugin-typography": "^1.7.19",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
-    "nuka-carousel": "^4.2.4",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.3.3",
     "tslint": "^5.10.0",
