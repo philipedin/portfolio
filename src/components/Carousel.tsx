@@ -39,11 +39,16 @@ interface IState {
 }
 
 class Carousel extends React.Component<IProps, IState> {
+  timer = 0;
+  interval = 3500;
+
   constructor(props: IProps) {
     super(props);
     this.state = {
       currentImageIndex: 0,
     };
+
+    this.timer = setInterval(this.nextImage, this.interval);
   }
 
   get currentImage() {
@@ -53,7 +58,17 @@ class Carousel extends React.Component<IProps, IState> {
     return <ImageDiv src={imagesSources[currentImageIndex]} />;
   }
 
+  endTimer() {
+    clearTimeout(this.timer);
+  }
+
+  startTimer() {
+    this.timer = setInterval(this.nextImage, this.interval);
+  }
+
   nextImage = () => {
+    this.endTimer();
+
     const { currentImageIndex } = this.state;
     const { imagesSources } = this.props;
 
@@ -64,9 +79,13 @@ class Carousel extends React.Component<IProps, IState> {
     } else {
       this.setState({ currentImageIndex: 0});
     }
+
+    this.startTimer();
   }
 
   previousImage = () => {
+    this.endTimer();
+
     const { currentImageIndex } = this.state;
     const { imagesSources } = this.props;
 
@@ -77,6 +96,8 @@ class Carousel extends React.Component<IProps, IState> {
     } else {
       this.setState({ currentImageIndex: imagesSources.length - 1});
     }
+
+    this.startTimer();
   }
 
   render() {
