@@ -52,7 +52,7 @@ const Menu = () => (
           textDecoration: 'none',
         }}
       >
-        <Name isCurrentRoute={location.pathname === routes.home.path}>
+        <Name isCurrentRoute={window.location.pathname === routes.home.path}>
           {routes.home.name}
         </Name>
       </Link>
@@ -64,7 +64,7 @@ const Menu = () => (
           textDecoration: 'none',
         }}
       >
-        <Name isCurrentRoute={location.pathname === routes.work.path}>
+        <Name isCurrentRoute={window.location.pathname === routes.work.path}>
           {routes.work.name}
         </Name>
       </Link>
@@ -76,7 +76,7 @@ const Menu = () => (
           textDecoration: 'none',
         }}
       >
-        <Name isCurrentRoute={location.pathname === routes.skills.path}>
+        <Name isCurrentRoute={window.location.pathname === routes.skills.path}>
           {routes.skills.name}
         </Name>
       </Link>
