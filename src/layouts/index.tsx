@@ -1,11 +1,11 @@
-import * as React from 'react'
-import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
-import Header from '../components/header'
-import './index.css'
+import './index.css';
+import Menu from '../components/Menu';
 
-interface Props {
+interface IProps {
   children: () => JSX.Element[];
   data: {
     site: {
@@ -13,11 +13,29 @@ interface Props {
         title: string;
       },
     },
-  }
+  };
 }
 
-const Layout = ({ children, data }: Props) => (
-  <div>
+const Wrapper = styled.div`
+  max-width: 1366px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+const Header = styled.div`
+  min-width: 180px;
+  padding: 15px;
+`;
+
+const Right = styled.div`
+  flex: 1;
+  padding: 0px 15px;
+`;
+
+const Layout = ({ children, data }: IProps) => (
+  <Wrapper>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -25,21 +43,18 @@ const Layout = ({ children, data }: Props) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-)
+    <Header>
+      <Menu />
+    </Header>
+    <Right>
+      <div>
+        {children()}
+      </div>
+    </Right>
+  </Wrapper>
+);
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
   query SiteTitleQuery {
@@ -49,4 +64,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
