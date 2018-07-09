@@ -23,13 +23,11 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "develop": "gatsby develop"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.3",
-    "@types/react-helmet": "^5.0.6",
-    "gh-pages": "^1.2.0",
+    "@types/react-helmet": "^5.0.6"
   },
   "repository": {
     "type": "git",
