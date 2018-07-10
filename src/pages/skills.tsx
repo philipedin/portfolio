@@ -41,6 +41,11 @@ query SkillsQuery {
               absolutePath
               relativePath
               publicURL
+              childImageSharp {
+                  resolutions {
+                    ...GatsbyImageSharpResolutions
+                  }
+                }
             }
             link
           }

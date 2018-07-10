@@ -1,25 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { IImage } from '../models';
 
 const Wrapper = styled.div`
-  height: 400px;
-  width: 100%;
+  position: relative;
 
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   background-color: #fff;
-
-  position: relative;
-  display: flex;
-  overflow: hidden;
-`;
-
-const ImageDiv = styled.div`
-  background-image: url(${(props: {src: string}) => props.src});
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  width: 100%;
 `;
 
 const HiddenButton = styled.div`
@@ -31,7 +19,7 @@ const HiddenButton = styled.div`
 `;
 
 interface IProps {
-  imagesSources: string[];
+  images: IImage[];
 }
 
 interface IState {
@@ -57,9 +45,15 @@ class Carousel extends React.Component<IProps, IState> {
 
   get currentImage() {
     const { currentImageIndex } = this.state;
-    const { imagesSources } = this.props;
+    const { images } = this.props;
 
-    return <ImageDiv src={imagesSources[currentImageIndex]} />;
+    const {
+      childImageSharp: {
+        sizes,
+      },
+    } = images[currentImageIndex];
+
+    return <Img sizes={sizes} />;
   }
 
   endTimer() {
@@ -74,9 +68,9 @@ class Carousel extends React.Component<IProps, IState> {
     this.endTimer();
 
     const { currentImageIndex } = this.state;
-    const { imagesSources } = this.props;
+    const { images } = this.props;
 
-    if (currentImageIndex < imagesSources.length - 1) {
+    if (currentImageIndex < images.length - 1) {
       this.setState((prevState) => {
         return { currentImageIndex: prevState.currentImageIndex + 1};
       });
@@ -91,14 +85,14 @@ class Carousel extends React.Component<IProps, IState> {
     this.endTimer();
 
     const { currentImageIndex } = this.state;
-    const { imagesSources } = this.props;
+    const { images } = this.props;
 
     if (currentImageIndex > 0) {
       this.setState((prevState) => {
         return { currentImageIndex: prevState.currentImageIndex - 1};
       });
     } else {
-      this.setState({ currentImageIndex: imagesSources.length - 1});
+      this.setState({ currentImageIndex: images.length - 1});
     }
 
     this.startTimer();
@@ -107,8 +101,8 @@ class Carousel extends React.Component<IProps, IState> {
   render() {
     return (
       <Wrapper>
-        <HiddenButton onClick={this.previousImage}/>
         {this.currentImage}
+        <HiddenButton onClick={this.previousImage}/>
         <HiddenButton right onClick={this.nextImage}/>
       </Wrapper>
     );

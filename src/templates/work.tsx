@@ -40,7 +40,7 @@ const WorkTemplate = ({
 
     {screenshots &&
       <Carousel
-        imagesSources={screenshots.map((screenshot) => screenshot.publicURL)}
+        images={screenshots}
       />
     }
 

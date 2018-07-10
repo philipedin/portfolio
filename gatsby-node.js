@@ -34,6 +34,15 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                 absolutePath
                 relativePath
                 publicURL
+                childImageSharp {
+                  sizes(maxWidth: 1336, quality: 80) {
+                    aspectRatio
+                    sizes
+                    base64
+                    src
+                    srcSet
+                  }
+                }
               }
             }
           }
