@@ -17,10 +17,6 @@ const Wrapper = styled.div`
   }
 `;
 
-interface ImageContainerProps {
-  imageUrl: string;
-}
-
 const ImageContainer = styled.div`
   width: 200px;
   height: 200px;
@@ -60,11 +56,6 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Image = styled.img`
-  max-height: 100%;
-  margin: 0px;
-`;
-
 const WorkListItem = ({ work }: IProps) => {
   const {
     node: {
@@ -79,7 +70,6 @@ const WorkListItem = ({ work }: IProps) => {
     <Wrapper>
       <ImageContainer>
       <Img resolutions={logo.childImageSharp.resolutions} />
-        <Image src={logo.publicURL} />
       </ImageContainer>
     </Wrapper>
   );
