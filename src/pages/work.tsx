@@ -39,9 +39,14 @@ query WorkQuery {
           title
           images {
             logo {
-              absolutePath
-              relativePath
-              publicURL
+              childImageSharp {
+                  sizes(maxHeight: 200, maxWidth: 200, quality: 80) {
+                  	...GatsbyImageSharpSizes
+                  }
+                  resolutions(height: 200, width: 200, quality: 80) {
+                  	...GatsbyImageSharpResolutions
+                  }
+                }
             }
           }
         }

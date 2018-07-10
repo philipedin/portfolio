@@ -12,6 +12,17 @@ interface IProps {
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  a {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+
+    @media only screen and (max-width: 680px) {
+      height: 75px !important;
+      width: 75px !important;
+    }
+  }
 `;
 
 const WorkList = ({ work }: IProps) => (
