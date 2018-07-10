@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from 'gatsby-link';
 
 import styled from 'styled-components';
+import { IRoute } from '../models';
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,21 +21,6 @@ const MenuItem = styled.div`
   }
 `;
 
-const routes = {
-  home: {
-    name: 'Home',
-    path: '/',
-  },
-  work: {
-    name: 'Work',
-    path: '/work',
-  },
-  skills: {
-    name: 'Skills',
-    path: '/skills',
-  },
-};
-
 interface INameProps {
   isCurrentRoute: boolean;
 }
@@ -47,44 +33,44 @@ const Menu = () => {
   const currentPathName =
     typeof window !== 'undefined' ? window.location.pathname : '';
 
+  const menuRoutes = [
+    {
+      name: 'Home',
+      path: '/',
+    },
+    {
+      name: 'Work',
+      path: '/work',
+    },
+    {
+      name: 'Skills',
+      path: '/skills',
+    },
+  ];
+
+  const getMenuItems = (routes: IRoute[]) => {
+    return routes.map((route) => {
+      return (
+        <MenuItem>
+          <Link
+            key={route.name}
+            to={route.path}
+            style={{
+              textDecoration: 'none',
+            }}
+          >
+            <Name isCurrentRoute={currentPathName === route.path}>
+              {route.name}
+            </Name>
+          </Link>
+        </MenuItem>
+      );
+    });
+  };
+
   return (
     <Wrapper>
-      <MenuItem>
-        <Link
-          to={routes.home.path}
-          style={{
-            textDecoration: 'none',
-          }}
-        >
-          <Name isCurrentRoute={currentPathName === routes.home.path}>
-            {routes.home.name}
-          </Name>
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link
-          to={routes.work.path}
-          style={{
-            textDecoration: 'none',
-          }}
-        >
-          <Name isCurrentRoute={currentPathName === routes.work.path}>
-            {routes.work.name}
-          </Name>
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link
-          to={routes.skills.path}
-          style={{
-            textDecoration: 'none',
-          }}
-        >
-          <Name isCurrentRoute={currentPathName === routes.skills.path}>
-            {routes.skills.name}
-          </Name>
-        </Link>
-      </MenuItem>
+      {getMenuItems(menuRoutes)}
     </Wrapper>
   );
 };
