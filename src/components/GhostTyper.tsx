@@ -1,5 +1,10 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import Cursor from './Cursor';
+
+const Wrapper = styled.span`
+  word-break: break-all;
+`;
 
 interface IProps {
   text: string;
@@ -60,9 +65,9 @@ class GhostTyper extends React.Component<IProps, IState> {
     const { output } = this.state;
     const { text } = this.props;
     return (
-      <span>
+      <Wrapper>
         {output}<Cursor>|</Cursor>
-      </span>
+      </Wrapper>
     );
   }
 }
