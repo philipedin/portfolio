@@ -46,14 +46,17 @@ const Menu = () => {
       name: 'Skills',
       path: '/skills',
     },
+    {
+      name: 'Contact',
+      path: '/contact',
+    },
   ];
 
   const getMenuItems = (routes: IRoute[]) => {
     return routes.map((route) => {
       return (
-        <MenuItem>
+        <MenuItem key={route.name}>
           <Link
-            key={route.name}
             to={route.path}
             style={{
               textDecoration: 'none',
