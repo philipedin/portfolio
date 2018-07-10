@@ -43,7 +43,7 @@ skills:
   -
     name: "GraphQL"
     image: "./images/graphql_logo.png"
-    link: "https://graphql.org/learn/"
+    link: "https://graphql.org/"
   -
     name: "Node"
     image: "./images/node_logo.png"
