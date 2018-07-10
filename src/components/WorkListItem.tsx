@@ -11,6 +11,8 @@ interface IProps {
 const Wrapper = styled.div`
   margin: 10px;
 
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
   &:hover {
     cursor: pointer;
     transform: scale(1.05);
@@ -26,6 +28,8 @@ const ImageContainer = styled.div`
   align-items: center;
 
   background: #fff;
+
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
 
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
