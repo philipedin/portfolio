@@ -1,11 +1,13 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
-
 import styled from 'styled-components';
+
 import { IRoute } from '../models';
+const githubIcon = require('../../data/images/github_icon.png');
 
 const Wrapper = styled.div`
   display: flex;
+  align-items: flex-start;
 `;
 
 const MenuItem = styled.div`
@@ -19,6 +21,12 @@ const MenuItem = styled.div`
     cursor: pointer;
     font-weight: bold;
   }
+`;
+
+const IconLink = styled.a`
+  height: 22px;
+  width: 22px;
+  margin: 0px 10px;
 `;
 
 interface INameProps {
@@ -74,6 +82,9 @@ const Menu = () => {
   return (
     <Wrapper>
       {getMenuItems(menuRoutes)}
+      <IconLink target="_blank" href="https://www.github.com/philipedin/portfolio">
+        <img src={githubIcon} />
+      </IconLink>
     </Wrapper>
   );
 };
