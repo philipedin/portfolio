@@ -11,7 +11,7 @@ technologies:
   - HTML
   - CSS
 images:
-  logo: "../images/high_coast_logo.jpg"
+  logo: "../images/high_coast_logo.png"
   screenshots:
     - "../images/high_coast_screen_1.png"
     -  "../images/high_coast_screen_2.png"
