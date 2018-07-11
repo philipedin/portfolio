@@ -11,9 +11,9 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-transformer-remark',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "'UA-67282727-3",
+        trackingId: 'UA-67282727-3',
         head: false,
       },
     },
