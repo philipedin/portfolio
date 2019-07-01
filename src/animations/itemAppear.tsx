@@ -15,7 +15,6 @@ const swoopIn = keyframes`
 `;
 
 const style = `
-  opacity: 1;
   position: relative;
   animation-name: ${swoopIn};
   animation-duration: 200ms;
