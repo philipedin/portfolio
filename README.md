@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6e856904-a4a8-45dd-aa99-2f8fab154988/deploy-status)](https://app.netlify.com/sites/philipedin-portfolio/deploys)
+
 # Portfolio - Philip Edin
 
 ## What is this?
