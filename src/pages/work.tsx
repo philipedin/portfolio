@@ -1,6 +1,7 @@
 import * as React from 'react';
-import WorkList from '../components/WorkList';
 import { IEdge, IWork } from '../models';
+import PageLayout from '../layouts/page';
+import WorkList from '../components/WorkList';
 import GhostTyper from '../components/GhostTyper';
 
 interface IProps {
@@ -18,11 +19,11 @@ const WorkPage = ({
     },
   },
 }: IProps) => (
-  <div>
+  <PageLayout>
     <h1>Work</h1>
     <GhostTyper text="A selection of the work i've done." />
     <WorkList work={edges} />
-  </div>
+  </PageLayout>
 );
 
 export const pageQuery = graphql`

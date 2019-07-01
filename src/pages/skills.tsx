@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SkillList from '../components/SkillList';
 import { IEdge, ISkill } from '../models';
+import PageLayout from '../layouts/page';
 import GhostTyper from '../components/GhostTyper';
 
 interface IProps {
@@ -18,11 +19,11 @@ const SkillsPage = ({
     },
   },
 }: IProps) => (
-  <div>
+  <PageLayout>
     <h1>Skills</h1>
     <GhostTyper text="This list includes technologies that i have experience working with." />
     <SkillList skills={edges[0].node.frontmatter.skills} />
-  </div>
+  </PageLayout>
 );
 
 export const pageQuery = graphql`

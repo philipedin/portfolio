@@ -6,6 +6,7 @@ import { IWork, IEdge } from '../models';
 
 interface IProps {
   work: IEdge<IWork>;
+  delay: number;
 }
 
 const Wrapper = styled.div`
@@ -60,7 +61,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const WorkListItem = ({ work }: IProps) => {
+const WorkListItem = (props: IProps) => {
   const {
     node: {
       frontmatter: {
@@ -69,9 +70,9 @@ const WorkListItem = ({ work }: IProps) => {
         },
       },
     },
-  } = work;
+  } = props.work;
   return (
-    <Wrapper>
+    <Wrapper style={{ animationDelay: `${props.delay}ms` }}>
       <ImageContainer>
       <Img resolutions={logo.childImageSharp.resolutions} />
       </ImageContainer>

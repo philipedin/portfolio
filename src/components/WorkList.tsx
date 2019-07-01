@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 
 import { IWork, IEdge } from '../models';
 import WorkListItem from './WorkListItem';
+import itemAppear from '../animations/itemAppear';
 
 interface IProps {
   work: [IEdge<IWork>];
@@ -22,15 +23,19 @@ const Wrapper = styled.div`
       height: 75px !important;
       width: 75px !important;
     }
+
+    & > div {
+      ${itemAppear}
+    }
   }
 `;
 
 const WorkList = ({ work }: IProps) => (
   <Wrapper>
     {work &&
-      work.map((workItem) =>
+      work.map((workItem, index) =>
         <Link to={workItem.node.frontmatter.path} key={workItem.node.id}>
-          <WorkListItem work={workItem} />
+          <WorkListItem work={workItem} delay={index * 60} />
         </Link>,
       )
     }

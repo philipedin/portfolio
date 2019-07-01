@@ -1,8 +1,9 @@
 import * as React from 'react';
+import PageLayout from '../layouts/page';
 import GhostTyper from '../components/GhostTyper';
 
 const IndexPage = () => (
-  <div>
+  <PageLayout>
     <h1>Contact</h1>
     <p>
       <GhostTyper text="Interested in contacting me or to know more of me and what i do?" />
@@ -16,7 +17,7 @@ const IndexPage = () => (
     <p>
       Email: <a target="_blank" href="mailto:philip.edin.alt@gmail.com">philip.edin.alt@gmail.com</a>
     </p>
-  </div>
+  </PageLayout>
 );
 
 export default IndexPage;

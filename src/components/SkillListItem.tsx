@@ -5,6 +5,7 @@ import { ISkill, IEdge } from '../models';
 
 interface IProps {
   skill: ISkill;
+  delay: number;
 }
 
 const Wrapper = styled.div`
@@ -51,14 +52,14 @@ const Name = styled.span`
   font-weight: bold;
 `;
 
-const SkillListItem = ({ skill }: IProps) => {
+const SkillListItem = (props: IProps) => {
   const {
     name,
     image,
     link,
-  } = skill;
+  } = props.skill;
   return (
-    <a target="_blank" href={link}>
+    <a target="_blank" href={link} style={{ animationDelay: `${props.delay}ms` }}>
       <Wrapper>
         <Left>
           <Image src={image.publicURL} />
