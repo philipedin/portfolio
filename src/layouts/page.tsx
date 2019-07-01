@@ -14,7 +14,7 @@ const fadeInFromBottom = keyframes`
 
 const PageLayout = styled.div`
   position: relative;
-  animation: ${fadeInFromBottom} 300ms ease-in-out;
+  animation: ${fadeInFromBottom} 300ms cubic-bezier(.25,.8,.25,1);
 `;
 
 export default PageLayout;
