@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 680px) {
     height: 45px;
-    width: 150px;
+    width: calc(50vw - 35px);
     font-size: 14px;
   }
 
